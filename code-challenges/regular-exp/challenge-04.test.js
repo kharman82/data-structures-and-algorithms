@@ -15,7 +15,7 @@ For example:
 const isNum = (input) => {
   // Solution code here...
   let regex = /\d/;
-  return regex.test(input);
+  return regex.test(input);  
 };
 
 /* ------------------------------------------------------------------------------------------------
