@@ -17,7 +17,15 @@ const howMuchPencil = (str) => {
   let result = [];
   // Solution code here...
   return result;
-};
+};  
+const howMuchPencil = (str) => {
+  let result = [];
+
+  for(let i = 0; i <= str.length; i++){
+    result.push(str.slice(i, str.length));
+  }
+  return result;
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
