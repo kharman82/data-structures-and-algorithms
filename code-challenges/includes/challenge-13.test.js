@@ -128,7 +128,7 @@ const unenrollBrook = (arr) => {
   arr.forEach(element => {
       answerArr.push(element.filter(item => !item.includes('Brook')));
   });
-  return answerArr;
+  return answerArr;   
 };
 
 /* ------------------------------------------------------------------------------------------------
