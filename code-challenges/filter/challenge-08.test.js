@@ -27,8 +27,9 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 const filterStringsWithVowels = (arr) => {
   // Solution code here...
   return arr.filter(value => {
-      return value.match(/[aeiou]/) 
-  })
+      return value.match(/[aeiou]/gi);
+   
+  });
 };
 
 
@@ -103,10 +104,14 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 
 const getStatName = (arr, minBaseStat) => {
   // Solution code here...
-  return arr.filter(value => {
-    return value.stat > minBaseStat
+  return arr.filter(stat => {
+    if (stat.baseStat > minBaseStat){
+      return true;
+    }
 })
-
+.map(obj => {
+  return obj.stat.name
+});
 };
 
 /* ------------------------------------------------------------------------------------------------

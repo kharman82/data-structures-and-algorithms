@@ -39,16 +39,15 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
- const re = /^[A-J]\b/g;
+ let newArr = [];
  arr.forEach(city => {
-   if (city.match(re)) {
-     arr.push(city);
-   };
-   
+   city.replace(' ', '');
+   if (city.search(/\b[J-Z]+[a-z]*\b/g)) {
+     newArr.push(city);
+   }
  });
- return re;
+  return newArr;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -63,6 +62,7 @@ Do not use the vertical bar (pipe) in your pattern.
 
 const matchMonth = (input) => {
   // Solution code here...
+  return /\bO?o?(ct)(ober)?\b/g.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -95,6 +95,7 @@ For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 
 let hangman = (str) => {
   // Solution code here...
+  return str.replace( /[aeiou]/gi , '_');
 };
 
 /* ------------------------------------------------------------------------------------------------

@@ -43,6 +43,7 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 
 const mapTwoToThe = (arr) => {
   // Solution code here...
+  return arr.map(x => Math.pow(2,x));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -57,6 +58,7 @@ For example: charCode(['h','i']) returns [104, 105].
 
 const charCode = (arr) => {
   // Solution code here...
+  return arr.map(x => x.charCodeAt());
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -71,6 +73,16 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 
 const evenOdd = (arr) => {
   // Solution code here...
+  return arr.map(x => {
+    if (x % 2 === 0) {
+      x = 'even';
+    } else if (x % 2 === 1) {
+      x = 'odd';
+    } else {
+      x = 'N/A';
+    }
+    return x;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -117,6 +129,7 @@ const snorlaxAbilities = {
 
 const extractAbilities = (arr) => {
   // Solution code here...
+  return arr.map(x => x.ability.name);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -164,6 +177,12 @@ const snorlaxStats = {
 
 const extractStats = (arr) => {
   // Solution code here...
+  return arr.map(x => {
+    return {
+      'name' : x.stat.name,
+      'total' : (x.effort + x.baseStat),
+    }
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------

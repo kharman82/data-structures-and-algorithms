@@ -125,6 +125,13 @@ For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 
 const calculateProduct = (numbers) => {
   // Solution code here...
+  let product =1;
+  for (let i = 0; i < numbers.length; i++) {
+    for (let j = 0; j < numbers[i].length; j++) {
+      product *= numbers[i][j];
+    }
+  }
+  return product;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -145,6 +152,15 @@ const weeklyTemperatures = [
 
 const averageDailyTemperature = (weather) => {
   // Solution code here...
+  let sum = 0;
+  let counter = 0;
+  for (let i = 0; i < weather.length; i++) {
+    for (let j =0; j < weather[i].length; j++) {
+      sum += weather[i][j];
+      counter++;
+    }
+  }
+  return sum / counter;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -166,6 +182,22 @@ let lowestWeeklyTemperatureData = [
 
 const lowestWeeklyAverage = (weather) => {
   // Solution code here...
+  let lowest = 0;
+  for (let i = 0; i < weather.length; i++) {
+    let sum = 0;
+    let counter = 0;
+    for (let j = 0; j < weather[i].length; j++) {
+      sum += weather[i][j];
+      counter++;
+    }
+    let avg = sum / counter;
+    if (i ===0) {
+      lowest = avg; 
+    } else {
+      lowest = (avg < lowest) ? avg : lowest;
+    }
+  }
+  return lowest;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -180,9 +212,9 @@ The function should parse the string as rows and columns and compute the sum of 
 For example, excel('1,1,1\n4,4,4\n9,9,9') returns [3, 12, 27].
 ------------------------------------------------------------------------------------------------ */
 
-const excel = (str) => {
+const excel = (str) =>  str.split('\n').map(item => item.split(',').map(strNum => parseInt(strNum)).reduce((acc, cur) => acc + cur));
   // Solution code here...
-};
+
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
